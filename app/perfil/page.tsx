@@ -1,41 +1,44 @@
-"use client"
+"use client";
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { PropertyCard } from "@/components/property-card"
-import { properties } from "@/lib/data"
-import { useToast } from "@/components/ui/use-toast"
-import { Edit, LogOut, Settings, User } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { PropertyCard } from "@/components/property-card";
+import { properties } from "@/lib/data";
+import { useToast } from "@/components/ui/use-toast";
+import { Edit, LogOut, Settings, User } from "lucide-react";
 
 export default function ProfilePage() {
-  const { toast } = useToast()
-  const [isEditing, setIsEditing] = useState(false)
+  const { toast } = useToast();
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleSaveProfile = () => {
-    setIsEditing(false)
+    setIsEditing(false);
     toast({
       title: "Perfil atualizado",
       description: "Suas informações foram atualizadas com sucesso",
-    })
-  }
+    });
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/4">
             <div className="sticky top-24 space-y-6">
               <div className="flex flex-col items-center text-center">
                 <Avatar className="h-24 w-24 mb-4">
-                  <AvatarImage src="/placeholder.svg?height=96&width=96" alt="@user" />
+                  <AvatarImage
+                    src="/placeholder.svg?height=96&width=96"
+                    alt="@user"
+                  />
                   <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
                 <h2 className="text-xl font-bold">João da Silva</h2>
@@ -45,13 +48,21 @@ export default function ProfilePage() {
               <Separator />
 
               <nav className="space-y-1">
-                <Button variant="ghost" className="w-full justify-start" asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start"
+                  asChild
+                >
                   <Link href="/perfil">
                     <User className="mr-2 h-4 w-4" />
                     <span>Perfil</span>
                   </Link>
                 </Button>
-                <Button variant="ghost" className="w-full justify-start" asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start"
+                  asChild
+                >
                   <Link href="/perfil/reservas">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +84,11 @@ export default function ProfilePage() {
                     <span>Reservas</span>
                   </Link>
                 </Button>
-                <Button variant="ghost" className="w-full justify-start" asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start"
+                  asChild
+                >
                   <Link href="/perfil/favoritos">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +107,11 @@ export default function ProfilePage() {
                     <span>Favoritos</span>
                   </Link>
                 </Button>
-                <Button variant="ghost" className="w-full justify-start" asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start"
+                  asChild
+                >
                   <Link href="/perfil/configuracoes">
                     <Settings className="mr-2 h-4 w-4" />
                     <span>Configurações</span>
@@ -123,7 +142,11 @@ export default function ProfilePage() {
               <TabsContent value="profile" className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold">Informações pessoais</h2>
-                  <Button variant="outline" size="sm" onClick={() => setIsEditing(!isEditing)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setIsEditing(!isEditing)}
+                  >
                     {isEditing ? (
                       "Cancelar"
                     ) : (
@@ -150,7 +173,11 @@ export default function ProfilePage() {
 
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" defaultValue="joao.silva@example.com" />
+                      <Input
+                        id="email"
+                        type="email"
+                        defaultValue="joao.silva@example.com"
+                      />
                     </div>
 
                     <div className="space-y-2">
@@ -179,7 +206,10 @@ export default function ProfilePage() {
                     </div>
 
                     <div className="flex justify-end">
-                      <Button className="bg-coral-500 hover:bg-coral-600" onClick={handleSaveProfile}>
+                      <Button
+                        className="bg-coral-500 hover:bg-coral-600"
+                        onClick={handleSaveProfile}
+                      >
                         Salvar alterações
                       </Button>
                     </div>
@@ -188,27 +218,39 @@ export default function ProfilePage() {
                   <div className="space-y-4 border rounded-lg p-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">Nome completo</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          Nome completo
+                        </h3>
                         <p>João da Silva</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">Email</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          Email
+                        </h3>
                         <p>joao.silva@example.com</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">Telefone</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          Telefone
+                        </h3>
                         <p>(11) 98765-4321</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">Endereço</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          Endereço
+                        </h3>
                         <p>Rua das Flores, 123</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">Cidade/Estado</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          Cidade/Estado
+                        </h3>
                         <p>São Paulo, SP</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-muted-foreground">CEP</h3>
+                        <h3 className="text-sm font-medium text-muted-foreground">
+                          CEP
+                        </h3>
                         <p>01234-567</p>
                       </div>
                     </div>
@@ -223,7 +265,9 @@ export default function ProfilePage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Notificações por email</h3>
-                        <p className="text-sm text-muted-foreground">Receba atualizações sobre reservas e promoções</p>
+                        <p className="text-sm text-muted-foreground">
+                          Receba atualizações sobre reservas e promoções
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <input
@@ -241,10 +285,16 @@ export default function ProfilePage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Notificações por SMS</h3>
-                        <p className="text-sm text-muted-foreground">Receba lembretes sobre suas reservas</p>
+                        <p className="text-sm text-muted-foreground">
+                          Receba lembretes sobre suas reservas
+                        </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="smsNotifications" className="h-4 w-4 rounded border-gray-300" />
+                        <input
+                          type="checkbox"
+                          id="smsNotifications"
+                          className="h-4 w-4 rounded border-gray-300"
+                        />
                         <Label htmlFor="smsNotifications" className="text-sm">
                           Desativado
                         </Label>
@@ -254,7 +304,9 @@ export default function ProfilePage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Moeda</h3>
-                        <p className="text-sm text-muted-foreground">Moeda padrão para exibição de preços</p>
+                        <p className="text-sm text-muted-foreground">
+                          Moeda padrão para exibição de preços
+                        </p>
                       </div>
                       <select className="h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm">
                         <option>BRL (R$)</option>
@@ -266,7 +318,9 @@ export default function ProfilePage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-medium">Idioma</h3>
-                        <p className="text-sm text-muted-foreground">Idioma padrão do site</p>
+                        <p className="text-sm text-muted-foreground">
+                          Idioma padrão do site
+                        </p>
                       </div>
                       <select className="h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm">
                         <option>Português (Brasil)</option>
@@ -291,12 +345,16 @@ export default function ProfilePage() {
                       />
                       <div className="flex-1">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                          <h3 className="text-lg font-semibold">Apartamento com vista para o mar</h3>
+                          <h3 className="text-lg font-semibold">
+                            Apartamento com vista para o mar
+                          </h3>
                           <Badge variant="outline" className="w-fit">
                             Confirmada
                           </Badge>
                         </div>
-                        <p className="text-muted-foreground">Rio de Janeiro, Brasil</p>
+                        <p className="text-muted-foreground">
+                          Rio de Janeiro, Brasil
+                        </p>
                         <div className="mt-2 grid grid-cols-1 md:grid-cols-3 gap-2">
                           <div>
                             <p className="text-sm font-medium">Check-in</p>
@@ -332,8 +390,13 @@ export default function ProfilePage() {
                       />
                       <div className="flex-1">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                          <h3 className="text-lg font-semibold">Chalé na montanha</h3>
-                          <Badge variant="outline" className="w-fit bg-gray-100">
+                          <h3 className="text-lg font-semibold">
+                            Chalé na montanha
+                          </h3>
+                          <Badge
+                            variant="outline"
+                            className="w-fit bg-gray-100"
+                          >
                             Concluída
                           </Badge>
                         </div>
@@ -380,5 +443,5 @@ export default function ProfilePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

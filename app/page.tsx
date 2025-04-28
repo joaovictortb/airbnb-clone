@@ -13,63 +13,6 @@ import { properties } from "@/lib/data";
 import backgroundImage from "@/public/background.webp";
 
 export default function Home() {
-  // const properties = [
-  //   {
-  //     id: 1,
-  //     title: "Apartamento com vista para o mar",
-  //     location: "Rio de Janeiro, Brasil",
-  //     price: 350,
-  //     rating: 4.9,
-  //     reviews: 128,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Casa de campo com piscina",
-  //     location: "Campos do Jordão, Brasil",
-  //     price: 420,
-  //     rating: 4.8,
-  //     reviews: 95,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Chalé na montanha",
-  //     location: "Gramado, Brasil",
-  //     price: 280,
-  //     rating: 4.7,
-  //     reviews: 76,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Apartamento no centro histórico",
-  //     location: "Salvador, Brasil",
-  //     price: 190,
-  //     rating: 4.6,
-  //     reviews: 64,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Casa na praia",
-  //     location: "Florianópolis, Brasil",
-  //     price: 380,
-  //     rating: 4.9,
-  //     reviews: 112,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Loft moderno",
-  //     location: "São Paulo, Brasil",
-  //     price: 250,
-  //     rating: 4.7,
-  //     reviews: 89,
-  //     image: "/placeholder.svg?height=300&width=400",
-  //   },
-  // ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <section className="relative w-full h-[500px] flex items-center justify-center">

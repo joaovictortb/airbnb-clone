@@ -80,6 +80,17 @@ export function Navbar() {
               >
                 Seja um anfitrião
               </Link>
+
+              <Link
+                href="/explorar"
+                className={`transition-colors hover:text-foreground/80 ${
+                  pathname === "/explorar"
+                    ? "text-foreground"
+                    : "text-foreground/60"
+                }`}
+              >
+                Explorar
+              </Link>
               <Link
                 href="/ajuda"
                 className={`transition-colors hover:text-foreground/80 ${
@@ -138,6 +149,17 @@ export function Navbar() {
             }`}
           >
             Seja um anfitrião
+          </Link>
+
+          <Link
+            href="/explorar"
+            className={`text-sm font-medium transition-colors hover:text-foreground/80 ${
+              pathname === "/explorar"
+                ? "text-foreground"
+                : "text-foreground/60"
+            }`}
+          >
+            Explorar
           </Link>
           <Link
             href="/ajuda"

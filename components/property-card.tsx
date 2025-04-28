@@ -97,9 +97,9 @@ export function PropertyCard(props: PropertyCardProps) {
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex gap-2">
-        <Button variant="primary" className="w-full">
-          Ver detalhes
-        </Button>
+        <Link href={`/imoveis/${id}`}>
+          <Button className="w-full">Ver detalhes</Button>
+        </Link>
       </CardFooter>
     </Card>
   );
